@@ -1,0 +1,48 @@
+name: meta-pilot-indexer
+description: Real-time indexing for Meta-Pilot AI DeFi automation
+version: 1.0.0
+
+networks:
+  - id: 11155111 # Sepolia Testnet
+    name: sepolia
+    start_block: latest
+    rpc_config:
+      url: https://sepolia.infura.io/v3/YOUR_INFURA_KEY
+    
+contracts:
+  - name: AaveV3Pool
+    address: "0x6Ae43d3271ff6888e7Fc43Fd7321a503ff738951"
+    abi_file_path: ./abis/AaveV3Pool.json
+    handler: ./src/handlers/aave.ts
+    events:
+      - event: Supply(address indexed reserve, address user, address indexed onBehalfOf, uint256 amount, uint16 indexed referralCode)
+        required_entities:
+          - name: User
+          - name: Transaction
+          - name: YieldEvent
+      - event: Withdraw(address indexed reserve, address user, address indexed to, uint256 amount)
+        required_entities:
+          - name: User
+          - name: Transaction
+          - name: YieldEvent
+
+  - name: USDC
+    address: "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8"
+    abi_file_path: ./abis/ERC20.json
+    handler: ./src/handlers/token.ts
+    events:
+      - event: Transfer(address indexed from, address indexed to, uint256 value)
+        required_entities:
+          - name: User
+          - name: Transaction
+
+field_selection:
+  transaction_fields:
+    - "hash"
+    - "block_number"
+    - "block_timestamp"
+    - "gas_used"
+    - "gas_price"
+    - "from"
+    - "to"
+    - "value"
