@@ -3,7 +3,7 @@
 <div align="center">
 
 ![MetaArmy Banner](https://img.shields.io/badge/MetaArmy-v3.0-blue?style=for-the-badge&logo=ethereum)
-[![Live Demo](https://img.shields.io/badge/🚀-Live%20Demo-success?style=for-the-badge)](https://your-metaarmy-app.vercel.app)
+[![Live Demo](https://img.shields.io/badge/🚀-Live%20Demo-success?style=for-the-badge)](https://meta-army.vercel.app/)
 [![MetaMask Hackathon](https://img.shields.io/badge/🏆-MetaMask%20Hackathon-orange?style=for-the-badge)](https://metamask.io)
 
 **Revolutionary DeFi Co-Pilot with AI-Powered Swarm Intelligence**
