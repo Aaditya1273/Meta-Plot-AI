@@ -28,55 +28,7 @@ MetaArmy is a **revolutionary decentralized finance automation platform** that t
 ---
 
 ## 🏗️ **Architecture Overview**
-
-```mermaid
-graph TB
-    subgraph "User Interface Layer"
-        UI[🎨 Next.js Frontend]
-        CHAT[💬 AI Chat Interface]
-        DASH[📊 Dashboard]
-    end
-    
-    subgraph "AI Intelligence Layer"
-        GEMINI[🧠 Gemini AI Parser]
-        INTENT[🎯 Intent Recognition]
-        SWARM[🤖 Swarm Orchestrator]
-    end
-    
-    subgraph "Blockchain Layer"
-        META[⚡ MetaArmy Contract]
-        ERC7715[🔐 ERC-7715 Permissions]
-        ZK[🛡️ ZK-Proof System]
-    end
-    
-    subgraph "DeFi Protocols"
-        AAVE[🏦 Aave Lending]
-        UNI[🔄 Uniswap DEX]
-        LIDO[🥩 Lido Staking]
-        COMP[💰 Compound]
-    end
-    
-    subgraph "Data & Indexing"
-        ENVIO[📡 Envio HyperSync]
-        ETHERSCAN[🔍 Etherscan API]
-        GRAPH[📈 Real-time Analytics]
-    end
-    
-    UI --> CHAT
-    CHAT --> GEMINI
-    GEMINI --> INTENT
-    INTENT --> SWARM
-    SWARM --> META
-    META --> ERC7715
-    ERC7715 --> ZK
-    ZK --> AAVE
-    ZK --> UNI
-    ZK --> LIDO
-    ZK --> COMP
-    META --> ENVIO
-    ENVIO --> GRAPH
-    GRAPH --> DASH
-```
+<img width="1449" height="885" alt="image" src="https://github.com/user-attachments/assets/72f3071c-2ac7-43f5-881d-3dec40a7b189" />
 
 ---
 
@@ -110,25 +62,7 @@ graph TB
 
 ## 🔄 **User Workflow**
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant UI as MetaArmy UI
-    participant AI as Gemini AI
-    participant Contract as MetaArmy Contract
-    participant Protocol as DeFi Protocol
-    
-    User->>UI: "Invest 100 USDC in highest yield"
-    UI->>AI: Parse natural language intent
-    AI->>UI: Return structured swarm tasks
-    UI->>User: Show swarm preview & gas estimate
-    User->>UI: Approve swarm execution
-    UI->>Contract: Grant ERC-7715 permission
-    Contract->>Protocol: Execute optimized strategy
-    Protocol->>Contract: Return execution results
-    Contract->>UI: Emit execution events
-    UI->>User: Display success & portfolio update
-```
+<img width="1534" height="796" alt="image" src="https://github.com/user-attachments/assets/58926761-8c4b-45f9-a100-6dceff861694" />
 
 ---
 
@@ -267,34 +201,15 @@ MetaArmy: Calculates current allocation → Executes swaps → Rebalances automa
 ## 🔧 **Development Workflow**
 
 ### **Smart Contract Development**
-```mermaid
-graph LR
-    A[Write Solidity] --> B[Compile with Hardhat]
-    B --> C[Run Tests]
-    C --> D[Deploy to Testnet]
-    D --> E[Verify on Etherscan]
-    E --> F[Update Frontend Config]
-```
+<img width="1767" height="328" alt="image" src="https://github.com/user-attachments/assets/1c84d85b-d939-42af-86d6-1f4fe22df4e9" />
+
 
 ### **Frontend Development**
-```mermaid
-graph LR
-    A[Design Components] --> B[Implement with React]
-    B --> C[Style with Tailwind]
-    C --> D[Integrate Wagmi]
-    D --> E[Test User Flows]
-    E --> F[Deploy to Vercel]
-```
+<img width="1724" height="215" alt="image" src="https://github.com/user-attachments/assets/0075823b-b5dd-4b77-9230-09407e583615" />
 
 ### **AI Integration**
-```mermaid
-graph LR
-    A[Design Prompts] --> B[Train Intent Parser]
-    B --> C[Test Edge Cases]
-    C --> D[Optimize Responses]
-    D --> E[Deploy AI Functions]
-    E --> F[Monitor Performance]
-```
+<img width="1840" height="172" alt="image" src="https://github.com/user-attachments/assets/d486082b-2390-471f-b18b-2ce42abee594" />
+
 
 ---
 
