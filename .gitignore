@@ -1,4 +1,45 @@
-node_modules
-.env*
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+.coverage
+.nyc_output
+
+# Next.js
+.next/
+out/
+
+# Production
+build/
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local Env Files (Critical Security)
+.env
 .env.local
-.env.example
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Hardhat
+cache/
+artifacts/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Editor directories and files
+.idea
+.vscode
+*.swp
+*.swo

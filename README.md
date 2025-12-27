@@ -1,225 +1,186 @@
-# 🤖 Meta-Pilot AI
+# MetaArmy 🤖
 
-> **Intent-driven, autonomous DeFi wealth management powered by MetaMask Advanced Permissions**
+**Your Autonomous DeFi Co-Pilot**
 
-[![Built for MetaMask Hackathon](https://img.shields.io/badge/Built%20for-MetaMask%20Hackathon-6366f1)](https://hackquest.io)
-[![ERC-7715](https://img.shields.io/badge/ERC--7715-Advanced%20Permissions-10b981)](https://eips.ethereum.org/EIPS/eip-7715)
-[![Envio](https://img.shields.io/badge/Powered%20by-Envio-f59e0b)](https://envio.dev)
+MetaArmy is a revolutionary dApp that transforms DeFi interaction from manual, friction-heavy processes into seamless, intent-driven automation. Built for the MetaMask Developer Hackathon, it showcases the power of Advanced Permissions (ERC-7715) and real-time blockchain indexing with Envio.
 
-## 🎯 The Problem
+## 🎯 The Problem We Solve
 
-DeFi promised financial freedom but delivered endless friction:
-- **70% abandonment rate** on multi-step DeFi flows
-- **Manual monitoring** of gas prices and yield opportunities  
-- **Endless popups** for every transaction
-- **Missed opportunities** due to timing and complexity
+- **UX Friction**: Users abandon DeFi due to endless transaction approvals and gas monitoring
+- **Missed Opportunities**: Manual monitoring leads to suboptimal timing and lost yields  
+- **Security vs Convenience**: Current solutions force users to choose between security and usability
 
-## 🚀 The Solution
+## Our Solution: MetaArmy
 
-Meta-Pilot AI transforms DeFi from reactive to proactive through:
+MetaArmy introduces **Verifiable Intent-Driven Automation**:
 
-### 🗣️ Natural Language Intents
-```
-"Keep $100 USDC safe, invest extra in best Aave yield weekly when gas is under 25 gwei"
-```
-
-### 🔐 One-Time Permissions (ERC-7715)
-- **Scoped access**: Only specified protocols and amounts
-- **Time-bound**: Automatic expiration
-- **Revocable**: Cancel anytime with one click
-
-### 🤖 Autonomous Execution
-- **Gas optimization**: Execute only when conditions are met
-- **Yield hunting**: Automatically find best opportunities
-- **Batched transactions**: 50-70% gas savings via EIP-7702
-
-### 🔗 Agent-to-Agent (A2A) Delegation
-- **Master agents** delegate to specialized sub-agents
-- **Gas Optimizer**: Monitors network conditions
-- **Yield Hunter**: Seeks highest APY opportunities
-- **Risk Manager**: Implements stop-loss strategies
+1. **Natural Language Input**: "Keep $100 USDC liquid, invest the rest in Lido weekly when gas < 30 gwei"
+2. **ZK-Verifiable Execution**: Every agent action is backed by a ZK-proof for trustless operations.
+3. **Multi-Protocol Orchestrator**: Seamless routes across Aave, Uniswap, Lido, and Compound.
+4. **Tokenized Economy**: Stake $MPA for zero-fee execution and access to premium agents.
+5. **Real-Time Transparency**: Live dashboard powered by Envio shows all agent activities and ZK proofs.
 
 ## 🏗️ Architecture
 
-```mermaid
-graph TB
-    A[User Intent] --> B[Intent Parser]
-    B --> C[ERC-7715 Permission]
-    C --> D[Automation Engine]
-    D --> E[Master Agent]
-    E --> F[Sub-Agent 1: Gas Optimizer]
-    E --> G[Sub-Agent 2: Yield Hunter]
-    E --> H[Sub-Agent 3: Risk Manager]
-    F --> I[DeFi Protocols]
-    G --> I
-    H --> I
-    I --> J[Envio Indexer]
-    J --> K[Real-time Dashboard]
-```
-
-## 🛠️ Tech Stack
-
 ### Frontend
-- **Next.js 15** - App Router with React 18
-- **Tailwind CSS** - Modern styling with glassmorphism
-- **Framer Motion** - Smooth animations
-- **Recharts** - Portfolio visualization
+- **Next.js 14** with TypeScript
+- **RainbowKit** for wallet connection
+- **Tailwind CSS** + **Framer Motion** for UI
+- **Recharts** for data visualization
 
-### Blockchain
-- **MetaMask SDK** - Wallet connection and permissions
-- **ERC-7715** - Advanced Permissions standard
-- **EIP-7702** - Transaction batching for gas optimization
-- **Ethers.js** - Blockchain interactions
+### Blockchain Integration
+- **MetaMask Smart Accounts Kit** for Advanced Permissions (ERC-7715)
+- **Wagmi** + **Viem** for Ethereum interactions
+- **Sepolia Testnet** deployment
 
-### Backend & Indexing
-- **Envio HyperSync** - Real-time blockchain indexing
-- **GraphQL** - Efficient data querying
-- **Node.js** - Automation engine
+### Real-Time Data
+- **Envio HyperSync** for sub-second blockchain indexing
+- **GraphQL** API for efficient data queries
+- Live activity feeds and portfolio tracking
 
-### DeFi Integration
-- **Aave V3** - Yield farming and lending
-- **Sepolia Testnet** - Development and testing
+### AI Engine
+- Intent parsing from natural language to structured parameters
+- Condition monitoring (gas prices, APY rates, market conditions)
+- Agent-to-Agent (A2A) delegation capabilities
 
-## 🚀 Quick Start
+## 🛠️ Getting Started
 
 ### Prerequisites
 - Node.js 18+
-- MetaMask browser extension
-- Sepolia testnet ETH and USDC
+- MetaMask wallet
+- Sepolia testnet ETH
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/meta-pilot-ai
-cd meta-pilot-ai
+git clone https://github.com/your-username/meta-plot-ai.git
+cd meta-plot-ai
 
 # Install dependencies
 npm install
 
-# Start development server
+# Set up environment variables
+cp .env.example .env.local
+# Add your WalletConnect Project ID and other config
+
+# Run development server
 npm run dev
 ```
 
-### Environment Setup
+### Environment Variables
 
-```bash
-# .env.local
-NEXT_PUBLIC_ENVIO_ENDPOINT=http://localhost:8080/v1/graphql
-NEXT_PUBLIC_ALCHEMY_API_KEY=your_alchemy_key
+```env
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id
+NEXT_PUBLIC_ENVIO_ENDPOINT=https://indexer.bigdevenergy.link/your-indexer/v1/graphql
+
+# Optional: Enable AI-powered intent parsing
+GEMINI_API_KEY=your_gemini_api_key
 ```
 
-### Deploy Envio Indexer
-
-```bash
-# Install Envio CLI
-npm install -g envio
-
-# Deploy indexer
-cd envio
-envio deploy
-```
+**Get Gemini API Key**: https://makersuite.google.com/app/apikey
 
 ## 🎮 Demo Flow
 
-1. **Connect MetaMask** to Sepolia testnet
-2. **Describe your strategy** in natural language
-3. **Grant permission** with one signature
-4. **Watch your AI pilot** execute autonomously
-5. **Create sub-agents** for specialized tasks
-6. **Monitor performance** on real-time dashboard
+1. **Connect Wallet**: Use RainbowKit to connect MetaMask on Sepolia
+2. **Set Intent**: Chat with AI: "Invest my extra USDC in Aave weekly"
+3. **Review Permission**: See parsed intent and permission scope
+4. **Grant Permission**: Single MetaMask signature
+5. **Monitor Dashboard**: Watch your AI agent work autonomously
 
-## 🏆 Hackathon Alignment
+## 🏆 Hackathon Features
 
-### Most Creative Use of Advanced Permissions ✅
-- **Natural language** to ERC-7715 permission translation
-- **A2A delegation** with hierarchical permissions
-- **Conditional execution** based on gas and yield thresholds
+### Most Creative Use of Advanced Permissions ✨
+- **Intent-to-Permission Translation**: Natural language → ERC-7715 permissions
+- **A2A Delegation**: Master agents delegate to specialized sub-agents
+- **Conditional Execution**: Gas-aware, yield-optimized automation
+- **Granular Security**: Scoped permissions with automatic expiry
 
-### Best Use of Envio ✅
-- **Real-time dashboard** with sub-second updates
-- **Portfolio analytics** and yield tracking
-- **Agent activity monitoring** with GraphQL queries
+### Best Use of Envio 📊
+- **Real-Time Activity Feed**: Sub-second updates on agent actions
+- **Portfolio Analytics**: Live yield tracking and performance metrics
+- **Condition Monitoring**: Gas prices, APY rates, market data
+- **Historical Analysis**: Complete audit trail of all agent activities
 
-### Technical Innovation ✅
-- **Intent-centric UX** - First of its kind in DeFi
-- **Autonomous agent orchestration** with A2A capabilities
-- **EIP-7702 batching** for optimal gas efficiency
+### Technical Innovation 🔧
+- **Hybrid AI Architecture**: Rule-based + LLM fallback for intent parsing
+- **Smart Permission Management**: Hierarchical, revocable, time-bound
+- **Gas Optimization**: Intelligent timing for cost-effective execution
+- **Extensible Agent Framework**: Plugin architecture for new protocols
 
-## 📊 Impact Metrics
+## 📱 Key Components
 
-| Metric | Before Meta-Pilot | After Meta-Pilot |
-|--------|-------------------|------------------|
-| Signatures per week | 5-10 | 1 |
-| Gas costs | 100% | 30-50% |
-| Missed opportunities | High | Near zero |
-| User retention | 30% | 80%+ (projected) |
-| Time spent monitoring | 2+ hours/week | 0 minutes |
+### Chat Interface
+- Natural language intent input
+- Real-time AI parsing and feedback
+- Permission request generation
+- Approval workflow integration
 
-## 🔮 Future Roadmap
+### Dashboard
+- Portfolio performance visualization
+- Active permissions management
+- Real-time activity feed
+- Agent status monitoring
 
-### Phase 1: Core Features (✅ Completed)
-- [x] Natural language intent parsing
-- [x] ERC-7715 permission management
-- [x] Basic automation engine
-- [x] Envio real-time indexing
+### Smart Contracts
+- `MetaArmy.sol`: Core permission and execution logic
+- ERC-7715 integration for advanced permissions
+- A2A delegation support
+- Emergency controls and safety mechanisms
 
-### Phase 2: Advanced Agents (🚧 In Progress)
-- [x] A2A delegation framework
-- [ ] Cross-protocol yield optimization
-- [ ] Advanced risk management
-- [ ] Community agent marketplace
+## 🔐 Security Features
 
-### Phase 3: Ecosystem (🔮 Planned)
-- [ ] Multi-chain support
-- [ ] AI-powered strategy optimization
-- [ ] Social trading features
-- [ ] Mobile app
+- **Scoped Permissions**: Limited to specific protocols and amounts
+- **Time-Bound Access**: Automatic expiry prevents indefinite access
+- **Revocable Anytime**: Users maintain full control
+- **Condition Validation**: Multi-layer checks before execution
+- **Audit Trail**: Complete transparency via Envio indexing
+
+## 🎯 Roadmap
+
+### Phase 1: Core Features ✅
+- Basic intent parsing
+- ERC-7715 integration
+- Aave automation
+- Real-time dashboard
+
+### Phase 2: Advanced AI 🚧
+- LLM-powered intent understanding
+- Multi-protocol optimization
+- Risk assessment integration
+- Predictive rebalancing
+
+### Phase 3: Agent Economy 🔮
+- Community agent marketplace
+- Shared strategy templates
+- Cross-user agent delegation
+- Yield farming optimization
 
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-### Development Setup
-
-```bash
-# Run tests
-npm test
-
-# Lint code
-npm run lint
-
-# Type check
-npm run type-check
-
-# Build for production
-npm run build
-```
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## 🏅 Hackathon Submission
 
-- **MetaMask Team** for Advanced Permissions and the hackathon
-- **Envio** for lightning-fast blockchain indexing
-- **Aave** for DeFi protocol integration
-- **Ethereum Foundation** for EIP-7702 and ERC-7715 standards
+**MetaMask Developer Hackathon 2024**
+- **Track**: Most Creative Use of Advanced Permissions
+- **Bonus**: Best Use of Envio
+- **Demo Video**: [Link to demo video]
+- **Live Demo**: [Deployed application URL]
 
-## 📞 Contact
+## 🔗 Links
 
-- **Demo**: [Live Demo Link](https://meta-pilot-ai.vercel.app)
-- **Video**: [Demo Video](https://youtu.be/your-demo-video)
-- **Twitter**: [@YourTwitter](https://twitter.com/your-twitter)
-- **Email**: your-email@example.com
+- **Documentation**: [Detailed docs](docs/)
+- **Smart Contracts**: [Verified on Sepolia](https://sepolia.etherscan.io)
+- **Envio Indexer**: [GraphQL Playground](https://indexer.bigdevenergy.link)
+- **Demo Video**: [YouTube/Loom link]
 
 ---
-
-<div align="center">
 
 **Built with ❤️ for the MetaMask Developer Hackathon**
 
 *Transforming DeFi from reactive to proactive, one intent at a time.*
-
-</div>
